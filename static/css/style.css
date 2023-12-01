@@ -1,5 +1,5 @@
 body{
-    background-image: url(), url(https://static.vecteezy.com/system/resources/previews/002/193/057/original/wood-texture-background-free-vector.jpg);
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/193/057/original/wood-texture-background-free-vector.jpg);
     background-repeat: no-repeat, repeat-x;
   }
 
@@ -22,6 +22,8 @@ body{
     justify-content: center;
     align-items: center;
     transition: transform .1s; /* Animation */
+    background-image: url(https://media.istockphoto.com/id/1154393346/fr/vectoriel/fond-de-cartes-%C3%A0-jouer-cartes-de-jeu-de-chemise-cartes-%C3%A0-jouer-dos-designs-banni%C3%A8re.jpg?s=1024x1024&w=is&k=20&c=qZtqrSFC-iSS-ApOK_8bEpPjoQZBjDXCxEoBHWgn9Lg=);
+    background-size: auto;
 }
 
 .topnav img{
