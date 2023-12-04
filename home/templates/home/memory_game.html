@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/memory_game.css' %}">
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <h2><div id="score">Score: 0</div></h2>
+    <button onclick="startMemoryGame()">Start Game</button>
+
+    <div id="memory-game-container">
+        <!-- La grille du jeu sera insérée ici par JavaScript -->
+    </div>
+
+    <script src="{% static 'js/memory_game.js' %}"></script>
+</body>
+</html>

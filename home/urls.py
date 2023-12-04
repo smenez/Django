@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .views import index, game_page, inscription
+
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('index.html', views.index, name='index'),
-    path('jeu.html', views.jeu, name='jeu'),
+    path('', index, name='index'),
+    path('game/',game_page, name='game_page'),
+    path('inscription.html', inscription, name='inscription')
 ]
