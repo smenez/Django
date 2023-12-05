@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/memory_game.css' %}">
+</head>
+<body>
+    <h1>Memory Game</h1>
+
+    <h2>
+        <div id="score">
+            0/18 paires trouvées
+        </div>
+        <div id="stopwatch">
+            00:00:00
+        </div>
+    </h2>
+    
+    <div id='continue' style="display: none;">
+        <p>Félicitations ! Voulez vous rejouer ?</p>
+        <div>
+            <button id="menubutton" onclick="startMemoryGame()">Rejouer !</button> <a href="../home/gamemode.html"><button id="menubutton">Non !</button></a>
+        </div>
+    </div>
+
+    <div id='startbutton'>
+        <button onclick="AddPoint()">Test</button>
+        <button onclick="startMemoryGame()">Start Game</button>
+    </div>
+
+    <div id="memory-game-container">
+        <!-- La grille du jeu sera insérée ici par JavaScript -->
+    </div>
+
+    <script src="{% static 'js/memory_game.js' %}"></script>
+</body>
+</html>
