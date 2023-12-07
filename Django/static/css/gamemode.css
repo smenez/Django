@@ -1,7 +1,5 @@
 body{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/002/193/057/original/wood-texture-background-free-vector.jpg);
-    background-repeat: no-repeat, repeat-x;
-    color: azure;
+    background-color: rgb(70, 20, 91);
   }
 *{
     margin: 2px;

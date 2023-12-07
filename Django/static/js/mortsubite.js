@@ -1,13 +1,13 @@
 let flippedCards = [];
 let score = 0;
-var startTime; // Garder le temsp de départ en mémoire
-var stopwatchInterval; // Garder l'interval
-var elapsedPausedTime = 0; // garder en mémoire le temps mis en pause
+let startTime; // Garder le temsp de départ en mémoire
+let stopwatchInterval; // Garder l'interval
+let elapsedPausedTime = 0; // garder en mémoire le temps mis en pause
 
 function startMemoryGame() {
 
     // cacher les boutons quand le jeu se lance
-    var x = document.getElementById('startbutton');
+    let x = document.getElementById('startbutton');
         if (x.style.display === 'none') {
             x.style.display= 'flex';
         }else{
@@ -136,16 +136,45 @@ function unflipCards(card1, card2) {
     }, 1000);
 }
 
+//fonction quand restart le jeu
+function replay(){
+    let x = document.getElementById('continue');
+    let y = document.getElementById('overall_continue');
+    let z = document.getElementById('overall_continue2');
+    if (x.style.display === 'none') {
+        x.style.display= 'flex';
+        y.classList.add('overall_continue_act');
+        z.classList.add('overall_continue_act');
+    }else{
+        x.style.display = 'none';
+        y.classList.remove('overall_continue_act');
+        z.classList.remove('overall_continue_act');
+    }
+
+    score = 0;
+    document.getElementById('scorebox').textContent = `${score}/18`;
+
+    startMemoryGame();
+}
+
 // Fonction pour mettre à jour le score et finir la partie si score max atteint
 function updateScore() {
-    document.getElementById('score').textContent = `${score}/18 paires trouvées`;
+    document.getElementById('scorebox').textContent = `${score}/18`;
+
     if (score == 18){ 
-        var x = document.getElementById('continue');
+        let x = document.getElementById('continue');
+        let y = document.getElementById('overall_continue');
+        let z = document.getElementById('overall_continue2');
         if (x.style.display === 'none') {
             x.style.display= 'flex';
+            y.classList.add('overall_continue_act');
+            z.classList.add('overall_continue_act');
         }else{
             x.style.display = 'none';
-        } 
+            y.classList.remove('overall_continue_act');
+            z.classList.remove('overall_continue_act');
+        }
+        
         
         clearInterval(stopwatchInterval); // stop l'intervalle
         elapsedPausedTime = new Date().getTime() - startTime; // calcul le temps de pause pour ne pas le compter
@@ -162,29 +191,20 @@ function AddPoint(){
 }
 
 
-
-function replay() {
-    stopStopwatch(); // stop l'interval régulier de maj du temps
-    elapsedPausedTime = 0; // remet à 0 le temps 
-    document.getElementById("stopwatch").innerHTML = "00:00:00"; // remet le compteur à 0 dans la vu joueur
-
-    startMemoryGame()
-  }
-
   // update du chrono tout les 1000 millisecondes (1seconde)
 function updateStopwatch() {
-    var currentTime = new Date().getTime(); // avoir le temps en millisecondes
-    var elapsedTime = currentTime - startTime; // Temps total en millisecondes écoulés
-    var seconds = Math.floor(elapsedTime / 1000) % 60; // calcul en secondes
-    var minutes = Math.floor(elapsedTime / 1000 / 60) % 60; // calcul en minutes
-    var displayTime = pad(minutes) + ":" + pad(seconds); // format d'affichage du temps
+    let currentTime = new Date().getTime(); // avoir le temps en millisecondes
+    let elapsedTime = currentTime - startTime; // Temps total en millisecondes écoulés
+    let seconds = Math.floor(elapsedTime / 1000) % 60; // calcul en secondes
+    let minutes = Math.floor(elapsedTime / 1000 / 60) % 60; // calcul en minutes
+    let displayTime = pad(minutes) + ":" + pad(seconds); // format d'affichage du temps
     document.getElementById("stopwatch").innerHTML = displayTime; // mettre à jour l'affichage tout le temps.
     if (elapsedTime > 60000){
         clearInterval(stopwatchInterval); // stop l'intervalle
         elapsedPausedTime = new Date().getTime() - startTime; // calcul le temps de pause pour ne pas le compter
         stopwatchInterval = null; // reset l'intervalle de maj
         document.getElementById('continue').innerHTML=`Temps écoulé, nombre de paires trouvées : ${score} <a href='gamemode.html'><button>Menu Principal</button></a>`;
-        var x = document.getElementById('continue');
+        let x = document.getElementById('continue');
         if (x.style.display === 'none') {
             x.style.display= 'flex';
         }else{
