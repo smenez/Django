@@ -1,9 +1,8 @@
-from . import models
 from django import forms
-from django.forms import ModelForm
-from .models import Formulaire
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-class FormulaireForm(ModelForm) :
-    class Meta :
-        model = Formulaire
-        fields = ('pseudo', 'email', 'password',)
+class CreerUtilisateur(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

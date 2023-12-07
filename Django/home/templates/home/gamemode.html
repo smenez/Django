@@ -2,28 +2,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Index</title>
+    <title>Sweet Stuff !</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/gamemode.css' %}">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/475/673/png-transparent-lollipop-candy-hand-painted-lollipop-watercolor-painting-food-photography.png">
 </head>
 <body>
     <!-- header -->
-    <!-- Top navigation -->
-
-    <header>
-        <nav>
-            <div class="topnav">
-                <div class="flex-items"><a href="index.html">Home</a></div>
-                <div class="flex-items" id="div-navbar-img"><a href="gamemode.html" id="nav-img"><img src="https://www.icone-gif.com/gif/jeux-classique/cartes/cartes006.gif"></a></div>
-                <div class="flex-items"><a href="inscription.html">Inscription</a></div>
-            </div>
-        </nav>
-    </header>
+    <section class="header">
+        <divc class="title-wrapper">
+          <h1 class="sweet-title">
+            <span data-text="Sweet">Sweet</span>
+            <span data-text="Stuff">Stuff</span>
+          </h1>
+          <span class="top-title">Get me all the</span>
+          <span class="bottom-title">You can find</span>
+          </div>
+         
+    </section>
+    
     <div id="main_container">
-        <div id="gamemode1">
-            <a href="memory_game.html"><button id="button_gamemode">Contre la montre !</button></a>
+        <div id="gamemode">
+            <a href="memory_game.html"><img id='img_button_gamemode' src="https://cdn.discordapp.com/attachments/1165990850875117678/1182304919286452236/image.png?ex=65843642&is=6571c142&hm=374713d22837758ab87a7c4633831898b8b39ba9467d5a403647302bd3176aa5&" width="50%" height="auto"></a>
         </div>
-        <div id="gamemode2">
-            <a href="mortsubite.html"><button id="button_gamemode">Mort Subite</button></a>
+        <div id="gamemode_back">
+            <a href="{% url 'connexion' %}"><img src="https://cdn.discordapp.com/attachments/1165990850875117678/1182338784684146728/image.png?ex=658455cd&is=6571e0cd&hm=7c8c0fc55cbabff2c78c0221dff6231bfa82d78a602b05ee0dbd7ee3ceb4b991&" id="backbutton"></a>
+        </div>
+        <div id="gamemode">
+            <a href="mortsubite.html"><img id='img_button_gamemode' src="https://cdn.discordapp.com/attachments/1165990850875117678/1182306315540889670/image.png?ex=6584378f&is=6571c28f&hm=dd17626f41355fb569e43ca7e45fc5469be0fea2a23b030c626ab3ad77f038ca&" width="50%" height="auto"></a>
         </div>
     </div>
 

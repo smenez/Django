@@ -205,3 +205,17 @@ function pad(number) {
     // Si le nombre d'heure ou de minutes ou de secondes est inférieur à 10 ça ajoute un 0 avant pour garder la forme 00:00:00
     return (number < 10 ? "0" : "") + number;
 }
+
+const jsonData = {
+    key1: 'value1',
+    key2: 'value2',
+    // Ajoutez d'autres données selon vos besoins
+  };
+  
+  // Convertir les données en format JSON
+  const jsonString = JSON.stringify(jsonData, null, 2);
+
+  const filePath = '../../home/classement.json';
+
+// Écrire les données dans le fichier
+fs.writeFileSync(filePath, jsonString, 'utf-8');

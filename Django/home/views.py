@@ -9,9 +9,13 @@ from django.template import loader
 import tkinter as tk
 from tkinter import messagebox
 import random
-from .forms import FormulaireForm
+from .forms import CreerUtilisateur
 from . import models
 from django import forms
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
 
 
 def index(request):
@@ -20,23 +24,48 @@ def classement(request):
     return render(request, 'home/classement.html')
 def game_page(request):
     return render(request, 'home/gamemode.html')
+# @login_required(login_url='gamemode.html')
 def memorygame(request):
     return render(request, 'home/memory_game.html')
+# @login_required(login_url='gamemode.html')
 def mortsubite(request):
     return render(request, 'home/mortsubite.html')
+def profil(request):
+    return render(request, 'home/profil.html')
 
 
 
 
-def inscription(request) :
-    submitted = False
+def Inscription(request) :
+    form = CreerUtilisateur()
     if request.method == "POST" :
-        form = FormulaireForm(request.POST)
+        form = CreerUtilisateur(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('connexion.html')
     else:
-        form = FormulaireForm
+        form = CreerUtilisateur()
+        print('Pb connexion')
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, "home\\form.html", {'form': form})
+    context={'form':form}
+    return render(request, "home\\inscription.html", {'form': form})
+
+
+
+def Connexion(request) :
+    submitted = False
+    if request.method == "POST" :
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('index.html')
+        else:
+            messages.info(request, "Utilisateur et/ou Mot de passe incorrect")
+    return render(request, 'home/connexion.html')
+
+def logoutUser(request):
+    logout(request)
+    return HttpResponseRedirect('home/connexion.html')

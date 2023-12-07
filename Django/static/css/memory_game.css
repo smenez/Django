@@ -1,5 +1,6 @@
 body {
     background-color: rgb(70, 20, 91);
+    font-family: 'Emilys Candy', serif;
 }
 
 *{
@@ -7,15 +8,16 @@ body {
 }
 
 .card {
-    width: 197px; /* Ajustez la largeur de la carte selon vos besoins */
+    width: 153px; /* Ajustez la largeur de la carte selon vos besoins */
     height: 281px; /* Ajustez la hauteur de la carte selon vos besoins */
-    background-image: url(https://cardcollection.fr/img/cms/Dos_carte_pokemon.jpg);
+    background-image: url(https://cdn.discordapp.com/attachments/1165990850875117678/1182315479294038016/image.png?ex=65844018&is=6571cb18&hm=5b30d7cbb732096c182b25b5052e7208bfea4a8131361cdcae377f1ee6c9bc13&);
     display: inline-block;
     margin: 5px; /* Marge entre les cartes */
     text-align: center;
     line-height: 100px; /* Ajustez la hauteur de ligne pour centrer le texte verticalement */
     cursor: pointer; /* Change le curseur au survol de la carte */
     position: relative; /* Ajout de position relative pour positionner les faces absolues */
+    transition: transform 0.6 ease;
 }
 
 .card .front,
@@ -40,9 +42,12 @@ body {
     transform: rotateY(0deg); /* Retourne la face arrière à sa position initiale */
 }
 
+
+
 #memory-game-container {
     text-align: center;
     justify-content: center;
+    position: relative;
 }
 
 .menubutton{
@@ -65,6 +70,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#backbutton{
+    transition: transform 0.4s; /* Animation */
+
+}
+#backbutton:hover{
+    transform:scale(1.09);
+
 }
 /* **************************************************************** */
 /* **************************************************************** */
@@ -140,8 +154,29 @@ body {
 /* **************************************************************** */
 /* **************************************************************** */
 
-
+/* flouter le tout a part le menu pour rejouer quand gagner*/
 .overall_continue_act{
     filter: blur(30px);
 }
 
+/* **************************************************************** */
+/* **************************************************************** */
+/* **************************************************************** */
+/* **************************************************************** */
+
+
+
+#rules{
+    background-image: url();
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -10vh;
+
+}
+
+/* **************************************************************** */
+/* **************************************************************** */
+/* **************************************************************** */
+/* **************************************************************** */

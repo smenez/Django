@@ -1,0 +1,46 @@
+body{
+    background-image: url(https://cdn.discordapp.com/attachments/1165990850875117678/1182347701887705098/image.png?ex=65845e1b&is=6571e91b&hm=adeffd8650309d1ab336249630eab70ae556402a683ca4e196f180592c1c4be3&);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#input{
+    background-color: rgba(250, 235, 215, 0);
+    border-color: rgba(22, 107, 182, 0.654);
+    color: antiquewhite;
+    width: 100%;
+    height: 100%;
+}
+
+#formulaire{
+    display: flex;
+    background-color: rgba(255, 77, 0, 0.276);
+    width: 20%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+#formulaire form{
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+
+#input_connexion{
+    background-color: rgba(250, 235, 215, 0);
+    border-color: rgba(22, 107, 182, 0.654);
+    color: rgb(45, 44, 42);
+    width: 103.2%;
+    height: 100%;
+}
+

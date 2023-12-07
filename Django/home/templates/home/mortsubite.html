@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mortsubite.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/memory_game.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/475/673/png-transparent-lollipop-candy-hand-painted-lollipop-watercolor-painting-food-photography.png">
 </head>
 <body>
+    
     <div id='overall_continue'>
-        <h1>Memory Game</h1>
-            <p>Règle : Votre objectif est de trouver le plus de paires de cartes en 1 minute, le maximum étant de 18 paires trouvables. Bonne chance !</p>
+        <div>
+            <a href="gamemode.html"><img src="https://cdn.discordapp.com/attachments/1165990850875117678/1182297705687564298/image.png?ex=65842f8b&is=6571ba8b&hm=94b99ab11fcd73ee81d550891bab5e7c84cca96213fef0373ab9d9454621c1db&" id="backbutton"></a>
+        </div>
+        <div id="rules">
+            <h1>Mem<img src="https://cdn.discordapp.com/attachments/1182089346598314026/1182100514884817036/image.png?ex=658377e5&is=657102e5&hm=e35144528f4387173549526a2ca5dfb83d44032c6941278c3bec69ea1841b299&" width=26.5px>ry Game</h1>
+            <p>Règle : Votre objectif est de trouver le plus de paires en 1 minutes. Bonne chance!</p>
+        </div>
     </div>
 
     <h2>
@@ -42,7 +52,6 @@
 
     <div id='overall_continue2'>
         <div id='startbutton'>
-            <button onclick="AddPoint()">Test</button>
             <button onclick="startMemoryGame()" class="menubutton"><img src="https://cdn.discordapp.com/attachments/1159173141554282647/1182123853007290429/image.png?ex=65838da1&is=657118a1&hm=e4835db8d10680032cf82822c13cc493eacb94c8259482c000fc43349e639a74&"></button>
         </div>
 
@@ -53,6 +62,6 @@
     </div>
 
 
-    <script src="{% static 'js/mortsubite.js' %}"></script>
+    <script src="{% static 'js/memory_game.js' %}"></script>
 </body>
 </html>
